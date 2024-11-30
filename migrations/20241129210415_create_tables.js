@@ -3,8 +3,8 @@ export function up(knex) {
         table.increments("id").primary();
         table.string("name").notNullable();
         table.string("type").notNullable();
-        table.float("latitude").notNullable();
-        table.float("longitude").notNullable();
+        table.double("latitude").notNullable();
+        table.double("longitude").notNullable();
         table.string("address").notNullable();
         table.string("hours").notNullable();
         table.boolean("is_public").notNullable();

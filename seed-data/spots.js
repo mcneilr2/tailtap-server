@@ -1,12 +1,12 @@
 export default [
  {
       id: 1,
-      name: "Plaza Skatepark",
+      name: "The Plaza Skatepark/DownTown Skatepark",
       type: "Park",
-      latitude: 49.27730567009009,
-      longitude: -123.10246046739596,
+      latitude: 49.277234,
+      longitude:  -123.102575,
       address: "Quebec St & Union St, Vancouver, BC",
-      hours: "2h/7",
+      hours: "24/7",
       is_public: true,
       is_lit_night: true,
       weather_coverage: "partial",

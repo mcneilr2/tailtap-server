@@ -4,13 +4,12 @@ import 'dotenv/config';
 import spotsRoute from "./routes/spotsRoute.js"
 
 
-const { CORS_ORIGIN } = process.env
 const PORT = process.env.PORT || 8080;
 const app = express(); 
 
 app.use(express.json())
 app.use(express.static('public'))
-app.use(cors({ origin: CORS_ORIGIN }));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send(`<h1>Welcome to TailTap Server</h1>`);
