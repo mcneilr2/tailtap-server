@@ -23,7 +23,7 @@ export default [
       latitude: 49.28116307233384,
       longitude: -123.03134769117345,
       address: "Cassiar Connector & East Hastings St and Highway 1, Vancouver, BC V5K 2C8",
-      hours: "2h/7",
+      hours: "24/7",
       is_public: true,
       is_lit_night: true,
       weather_coverage: "Full",
