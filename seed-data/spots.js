@@ -1,7 +1,7 @@
 export default [
  {
       id: 1,
-      name: "The Plaza Skatepark/DownTown Skatepark",
+      name: "The Plaza Skatepark (or) DownTown Skatepark",
       type: "Park",
       latitude: 49.277234,
       longitude:  -123.102575,
