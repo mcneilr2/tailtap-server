@@ -12,7 +12,6 @@ export const index = async (_req, res) => {
 };
 
 export const getSpotbyId = async (req, res) => {
- const { id } = req.params;
     try {
       const spot = await knex("spots")
         .where({ id: Number(id) })
@@ -27,4 +26,30 @@ export const getSpotbyId = async (req, res) => {
         message: "Unable to find spot",
       });
     }
-  };
+};
+  
+export const addSpot = async (req, res) => {
+  console.log("req.body", req.body);
+
+  const { name, type, latitude, longitude, address, hours, is_public, is_lit_night, weather_coverage, occupancy_level, median_skill_level 
+   } =
+    req.body;
+
+  if ( !name || !type || !latitude || !longitude || !address || !hours || is_public == "null" || is_lit_night == "null" || !weather_coverage || occupancy_level == "null" || median_skill_level == "null" ) {
+    return res.status(400).json({
+      message: "Please provide all the requred data",
+    });
+  }
+
+  try {
+    const result = await knex("spots").insert(req.body);
+    const newItemId = result[0];
+    const createdItem = await knex("spots").where({ id: newItemId });
+
+    res.status(201).json(createdItem);
+  } catch (error) {
+    res.status(500).json({
+      message: `Unable to create new inventory item: ${error}`,
+    });
+  }
+};
