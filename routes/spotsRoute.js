@@ -5,7 +5,8 @@ const router = express.Router();
 
 router
     .route("/")
-    .get(spotsController.index);
+    .get(spotsController.index)
+    .post(spotsController.addSpot);
 
 router
     .route("/:id")
