@@ -7,7 +7,7 @@ export const index = async (_req, res) => {
     const data = await knex("spots");
     res.json(data);
   } catch (err) {
-    res.status(400).send(`Error retrieving Inventories: ${err}`);
+    res.status(400).send(`Error retrieving spots: ${err}`);
   }
 };
 
@@ -39,7 +39,7 @@ export const addSpot = async (req, res) => {
 
   if ( !name || !type || !latitude || !longitude || !address || !hours || is_public == "null" || is_lit_night == "null" || !weather_coverage || occupancy_level == "null" || median_skill_level == "null" ) {
     return res.status(400).json({
-      message: "Please provide all the requred data",
+      message: "Please provide all the required data",
     });
   }
 
@@ -51,7 +51,7 @@ export const addSpot = async (req, res) => {
     res.status(201).json(createdItem);
   } catch (error) {
     res.status(500).json({
-      message: `Unable to create new inventory item: ${error}`,
+      message: `Unable to create a new spot: ${error}`,
     });
   }
 };
