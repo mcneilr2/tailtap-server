@@ -51,7 +51,7 @@ export const addSpot = async (req, res) => {
     res.status(201).json(createdItem);
   } catch (error) {
     res.status(500).json({
-      message: `Unable to create new spot listing: ${error}`,
+      message: `Unable to create a new spot: ${error}`,
     });
   }
 };

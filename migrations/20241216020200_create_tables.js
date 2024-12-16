@@ -12,9 +12,9 @@ export function up(knex) {
         table.string("weather_coverage").notNullable();
         table.integer("occupancy_level").notNullable();
         table.integer("median_skill_level").notNullable();
-        table.string("homepage_video_id").notNullable();
-        table.string("closest_hospital_name").notNullable();
-        table.string("closest_hospital_address").notNullable();
+        table.string("homepage_video_id");
+        table.string("closest_hospital_name");
+        table.string("closest_hospital_address");
     });
 }
 
